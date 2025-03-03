@@ -27,15 +27,14 @@ export function TestFolderMatchesTemplate(testFolderPath: string, templateFolder
         files.forEach(file => {
             const testFilePath: string = path.join(testFolderPath, file)
             const isDirectory: boolean = fs.lstatSync(testFilePath).isDirectory()
-
+            let joinedTemplatePathResult: string = path.join(templateFolderPath, file)
+            
             if (!isDirectory) {
                 // Evaluate the template for the current file
                 // To simplify things currently - assume that the template file name is the same as the corresponding test data file name
-                let templateFile: string = path.join(templateFolderPath, file)
-                TestFileMatchesTemplate(testFilePath, templateFile, values)
-            } else if (isDirectory && recursive) {
-                const templateSubFolderPath: string = path.join(templateFolderPath, file)
-                TestFolderMatchesTemplate(testFilePath, templateSubFolderPath, values, true)
+                TestFileMatchesTemplate(testFilePath, joinedTemplatePathResult, values)
+            } else if (recursive) {
+                TestFolderMatchesTemplate(testFilePath, joinedTemplatePathResult, values, true)
             }
         });
     });
