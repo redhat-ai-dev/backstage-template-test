@@ -1,6 +1,6 @@
 {
   "name": "backstage-template-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple test library to validate nunjucks templates used in Backstage software templates",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
