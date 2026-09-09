@@ -1,4 +1,8 @@
 # backstage-template-test
+
+> [!WARNING]
+> This repository has been retired and will no longer be maintained. It has been moved to [redhat-developer/rhdh-backstage-template-test](https://github.com/redhat-developer/rhdh-backstage-template-test).
+
 A simple test library to validate nunjucks templates used in Backstage software templates
 
 This repository contains a basic testing library for the Nunjucks templates used in Backstage software templates. This library is written using the [ts-jest](https://github.com/kulshekhar/ts-jest) and [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) libraries.
